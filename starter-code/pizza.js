@@ -48,8 +48,8 @@ const renderMushrooms = () => {
   })
 }
 
+// Iteration 1: set the visibility of `<section class="green-pepper">`
 const renderGreenPeppers = () => {
-  // Iteration 1: set the visibility of `<section class="green-pepper">`
   document.querySelectorAll('.green-pepper').forEach(($pepper) => {
     if (state.greenPeppers) {
       $pepper.style.visibility = "visible";
@@ -58,6 +58,37 @@ const renderGreenPeppers = () => {
     }
   })
 }
+const renderGreenPeppers = () => {
+  document.querySelectorAll('.green-pepper').forEach(($pepper) => {
+    if (state.greenPeppers) {
+      $pepper.style.visibility = "visible";
+    } else {
+      $pepper.style.visibility = "hidden";
+    }
+  })
+}
+
+// Iteration 2: add/remove the class "sauce-white" of `<section class="sauce">`
+const renderWhiteSauce = () => {
+  document.querySelectorAll('.sauce').forEach(($theSauce) => {
+    if (state.whiteSauce) {
+      $theSauce.classList.add('sauce-white')
+    } else {
+      $theSauce.classList.remove('sauce-white')
+    }
+  })
+}
+
+const renderGlutenFreeCrust = () => {
+  document.querySelectorAll('.crust').forEach(($theCrust) => {
+    if (state.glutenFreeCrust) {
+      $theCrust.classList.add('crust-gluten-free')
+    } else {
+      $theCrust.classList.remove('crust-gluten-free');
+    }
+  })
+}
+
 
 function renderEverything() {
   renderPepperonni()
