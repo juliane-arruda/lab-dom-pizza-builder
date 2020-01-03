@@ -89,6 +89,43 @@ const renderGlutenFreeCrust = () => {
   })
 }
 
+// Iteration 3: add/remove the class "active" of each `<button class="btn">`
+const renderButtons = () => {
+  document.querySelectorAll('.btn').forEach(($theBtn) => {
+    if ($theBtn.classList.contains('btn-pepperonni')) {
+      if (state.pepperonni) {
+        $theBtn.classList.add('active')
+      } else {
+        $theBtn.classList.remove('active')
+      }
+    } else if ($theBtn.classList.contains('btn-mushrooms')) {
+      if (state.mushrooms) {
+        $theBtn.classList.add('active')
+      } else {
+        $theBtn.classList.remove('active')
+      }
+    } else if ($theBtn.classList.contains('btn-green-peppers')) {
+      if (state.greenPeppers) {
+        $theBtn.classList.add('active')
+      } else {
+        $theBtn.classList.remove('active')
+      }
+    } else if ($theBtn.classList.contains('btn-sauce')) {
+      if (state.whiteSauce) {
+        $theBtn.classList.add('active')
+      } else {
+        $theBtn.classList.remove('active')
+      }
+    } else if ($theBtn.classList.contains('btn-crust')) {
+      if (state.glutenFreeCrust) {
+        $theBtn.classList.add('active')
+      } else {
+        $theBtn.classList.remove('active')
+      }
+    }
+  })
+}
+
 
 function renderEverything() {
   renderPepperonni()
