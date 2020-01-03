@@ -168,11 +168,33 @@ const renderEverything = () => {
   renderPrice()
 }
 
+renderEverything()
+
+// Iteration 1: Example of a click event listener on `<button class="btn btn-pepperonni">`
+document.querySelector('.btn.btn-pepperonni').onclick = () => {
+  state.pepperonni = !state.pepperonni
+  renderEverything()
+}
 
 // Iteration 1: Add click event listener on `<button class="btn btn-mushrooms">`
+document.querySelector('.btn.btn-mushrooms').onclick = () => {
+  state.mushrooms = !state.mushrooms
+  renderEverything()
+}
 
 // Iteration 1: Add click event listener on `<button class="btn btn-green-peppers">`
+document.querySelector('.btn.btn-green-peppers').onclick = () => {
+  state.greenPeppers = !state.greenPeppers
+  renderEverything()
+}
 
 // Iteration 2: Add click event listener on `<button class="btn btn-sauce">`
-
+document.querySelector('.btn.btn-sauce').onclick = () => {
+  state.whiteSauce = !state.whiteSauce
+  renderEverything()
+}
 // Iteration 2: Add click event listener on `<button class="btn btn-crust">`
+document.querySelector('.btn.btn-crust').onclick = () => {
+  state.glutenFreeCrust = !state.glutenFreeCrust
+  renderEverything()
+}
