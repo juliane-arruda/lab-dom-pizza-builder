@@ -126,8 +126,39 @@ const renderButtons = () => {
   })
 }
 
+// Iteration 4: change the HTML of `<aside class="panel price">`
+const renderPrice = () => {
+  let total = basePrice;
+  let listHtml = '';
+  if (document.querySelector('.btn-pepperonni').classList.contains('active')) {
+    listHtml += '<li> $1 pepperonni </li>';
+    total += 1;
+  }
+  if (document.querySelector('.btn-mushrooms').classList.contains('active')) {
+    listHtml += '<li> $1 mushrooms </li>';
+    total += 1;
+  }
+  if (document.querySelector('.btn-green-peppers').classList.contains('active')) {
+    listHtml += '<li> $1 green peppers </li>';
+    total += 1;
+  }
+  if (document.querySelector('.btn-sauce').classList.contains('active')) {
+    listHtml += '<li> $3 white sauce </li>';
+    total += 3;
+  }
+  if (document.querySelector('.btn-crust').classList.contains('active')) {
+    listHtml += '<li> $5 gluten-free crust </li>';
+    total += 5;
+  }
+  let thePrice = `$${total}`;
+  let ulElement = document.querySelector('.panel.price > ul');
+  ulElement.innerHTML = listHtml;
+  let strongElement = document.querySelector('.panel.price > strong');
+  strongElement.innerHTML = thePrice;
+}
 
-function renderEverything() {
+
+const renderEverything = () => {
   renderPepperonni()
   renderMushrooms()
   renderGreenPeppers()
@@ -137,48 +168,6 @@ function renderEverything() {
   renderPrice()
 }
 
-function renderPepperonni() {
-  document.querySelectorAll('.pep').forEach(function ($pep) {
-    if (state.pepperonni) {
-      $pep.style.visibility = "visible";
-    } else {
-      $pep.style.visibility = "hidden";
-    }
-  })
-}
-
-function renderMushrooms() {
-  // Iteration 1: set the visibility of `<section class="mushroom">`
-}
-
-function renderGreenPeppers() {
-  // Iteration 1: set the visibility of `<section class="green-pepper">`
-}
-
-function renderWhiteSauce() {
-  // Iteration 2: add/remove the class "sauce-white" of `<section class="sauce">`
-}
-
-function renderGlutenFreeCrust() {
-  // Iteration 2: add/remove the class "crust-gluten-free" of `<section class="crust">`
-}
-
-function renderButtons() {
-  // Iteration 3: add/remove the class "active" of each `<button class="btn">`
-}
-
-function renderPrice() {
-  // Iteration 4: change the HTML of `<aside class="panel price">`
-}
-
-
-renderEverything()
-
-// Iteration 1: Example of a click event listener on `<button class="btn btn-pepperonni">`
-document.querySelector('.btn.btn-pepperonni').onclick = function () {
-  state.pepperonni = !state.pepperonni
-  renderEverything()
-}
 
 // Iteration 1: Add click event listener on `<button class="btn btn-mushrooms">`
 
